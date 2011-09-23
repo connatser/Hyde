@@ -1,0 +1,7 @@
+---
+layout: post
+title: Hello Mr. Hyde.
+---
+<p>
+Hello Mr Hyde.
+</p>

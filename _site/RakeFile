@@ -1,0 +1,31 @@
+desc "Parse templates"
+task :parse_templates => [:parse_haml] do
+    puts "Haml and Sass have been parsified..."
+end
+
+desc "Parse haml layouts"
+task :parse_haml => [:parse_sass] do
+  	puts "Parsing Haml layouts..."
+  	system(%{
+		cd _source/_layouts/haml && for f in *.haml; 
+		do [ -e $f ] && haml $f ../${f%.haml}.html; done
+  	})
+end
+
+desc "Parse sass"
+task :parse_sass do
+    puts "Parsing Sass layouts..."
+    system "sass _source/css/sass/style.scss _source/css/style.css"
+end
+
+desc "Launch preview environment"
+task :preview do
+  	Rake::Task["parse_haml"].invoke
+  	system "jekyll --auto --server"
+end
+
+desc "Build site"
+task :build do |task, args|
+  	Rake::Task["parse_haml"].invoke
+  	system "jekyll"
+end
