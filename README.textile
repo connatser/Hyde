@@ -51,6 +51,7 @@ h2. Props
 "Sass":http://sass-lang.com/
 "Guard":https://github.com/guard/guard
 "Guard-Rake":https://github.com/rubyist/guard-rake
+"Garth Braithwaite":http://twitter.com/garthdb : For telling me that Hyde was a much better name.
 
 h2. License
 
