@@ -12,6 +12,8 @@ h3. Haml
 
 h3. Sass
 
+h4. Jammit
+
 h3. Guard
 
 h3. Guard-Rake
@@ -30,7 +32,7 @@ h2. How to use Hyde.
 # browse to "http://localhost:4000":http://localhost:4000 and make sure things are groovy.
 # CTRL+C to stop the Jekyll preview
 # run @guard start@ _will tell guard to begin watching the Haml and Sass source directories_
-# make an edit to a Haml or Sass source file and see Guard to its thing.
+# make an edit to a Haml or Sass source file and see Guard do its thing.
 # CTRL+C to stop guard and run @jekyll --server@ and see the updated site.
 
 Your public site will be in @_site/_public@ to grab and place on your server.
@@ -41,6 +43,12 @@ h3. Other workflows
 # run @rake parse_templates@ _will manually run the Haml and Sass compilers_
 # run @jekyll --server@ _will generate the public site and start a preview_
 
+h3. Minimizing Assets
+
+# cd into "_site"
+# Review _css_jammit.yml and _js_jammit.yml, add any css or js files needed.
+# Run @jammit -o _source/css -c _css_jammit.yml@ to minimize all css.
+# Run @jammit -o _source/js -c _js_jammit.yml@ to minimize all js.
 
 h2. Props
 
@@ -49,6 +57,7 @@ h2. Props
 "Twitter : Bootstrap":http://twitter.github.com/bootstrap/
 "Haml":http://haml-lang.com/
 "Sass":http://sass-lang.com/
+"Jammit":http://documentcloud.github.com/jammit/
 "Guard":https://github.com/guard/guard
 "Guard-Rake":https://github.com/rubyist/guard-rake
 "Garth Braithwaite":http://twitter.com/garthdb : For telling me that Hyde was a much better name.
