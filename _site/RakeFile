@@ -1,3 +1,7 @@
+#rsync deployment parameters
+ssh_user = "user@domain.com"
+remote_root = "~/path/to/remote/"
+
 desc "Parse templates"
 task :parse_templates => [:parse_haml] do
     puts "Haml and Sass have been parsified..."
@@ -40,4 +44,10 @@ desc "Build site"
 task :build do |task, args|
   	Rake::Task["parse_haml"].invoke
   	system "jekyll"
+end
+
+desc "Grabs the public site and sends it up to your server."
+task :deploy do
+  puts "Deploying your site, celebrate with dance."
+  system("rsync -avz --delete _public/ #{ssh_user}:#{remote_root}")
 end
