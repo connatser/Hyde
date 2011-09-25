@@ -23,8 +23,11 @@ end
 
 desc "Parse sass"
 task :parse_sass do
-    puts "Parsing Sass layouts..."
-    system "sass _source/_layouts/sass/style.scss _source/css/style.css"
+    puts "Parsing Sass layouts..."    
+	system(%{
+		cd _source/_layouts/sass && for f in *.scss; 
+		do [ -e $f ] && sass $f ../../css/${f%.scss}.css; done
+  	})
 end
 
 desc "Launch preview environment"
