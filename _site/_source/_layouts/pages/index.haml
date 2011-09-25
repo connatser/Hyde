@@ -5,8 +5,10 @@ title: Hyde
 
 {% for post in site.posts limit:5 %}
 .post
-  <h1><a href="{{ post.url }}">{{post.title}}</a></h1>
+  %h1
+    %a{ :href => '{{ post.url }}'} {{post.title}}
   .body
     {{ post.content | replace:'more start -->','' | replace:'<!-- more end','' }}
-  <br /><br />
+  %br
+  %br
 {% endfor %}
