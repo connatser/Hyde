@@ -50,6 +50,10 @@ h3. Minimizing Assets
 # Run @jammit -o _source/css -c _css_jammit.yml@ to minimize all css.
 # Run @jammit -o _source/js -c _js_jammit.yml@ to minimize all js.
 
+h2. Sample
+
+The sample structure included is created with the Twitter Bootstrap layout. "Live Sample":http://hydrauliclabs.com/hyde/sample/
+
 h2. Props
 
 "Tom Preston-Werner : Jekyll":http://jekyllrb.com/
